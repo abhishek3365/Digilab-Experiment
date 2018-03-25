@@ -13,6 +13,7 @@ import { DigilabComponent } from './digilab/digilab.component';
 import { SessionsComponent } from './sessions/sessions.component';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DigilabItemComponent } from './digilab/digilab-item/digilab-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     SidebarMenuComponent,
     DigilabComponent,
     SessionsComponent,
-    AboutComponent
+    AboutComponent,
+    DigilabItemComponent
   ],
   imports: [
     BrowserModule,

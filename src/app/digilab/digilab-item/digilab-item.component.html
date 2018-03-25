@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  
+  <ng-template [ngIf]="!additional">
+    <img src="./assets/digilab.png">  
+    <h4>DigiLab Name</h4>
+    <mat-card-footer>
+      <mat-divider></mat-divider>
+      <div 
+        class="digilabStatus"
+        [style.background-color] = " status == 'Active' ? '#558B2F' : '#C62828' ">
+        <h5 class="status"><strong>{{status}}</strong></h5>
+      </div>
+    </mat-card-footer>
+  </ng-template>
+
+  <ng-template [ngIf]="additional">
+    <img src="./assets/plus.png" style="text-align : center;">
+  </ng-template>
+  
+</mat-card>
