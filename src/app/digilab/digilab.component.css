@@ -1,3 +1,11 @@
 .container{
     padding-top: 10px;
 }
+
+#addMore{
+    margin-top : 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

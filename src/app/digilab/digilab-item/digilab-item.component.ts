@@ -10,9 +10,6 @@ export class DigilabItemComponent implements OnInit {
   @Input()
   status : string;
 
-  @Input()
-  additional : boolean = false;
-
   constructor() { }
 
   ngOnInit() {
