@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DigilabItemComponent } from './digilab/digilab-item/digilab-item.component';
 import { DigilabListComponent } from './digilab/digilab-list/digilab-list.component';
 import { DigilabEditComponent } from './digilab/digilab-edit/digilab-edit.component';
+import { SessionEditComponent } from './sessions/session-edit/session-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DigilabEditComponent } from './digilab/digilab-edit/digilab-edit.compon
     AboutComponent,
     DigilabItemComponent,
     DigilabListComponent,
-    DigilabEditComponent
+    DigilabEditComponent,
+    SessionEditComponent
   ],
   imports: [
     BrowserModule,

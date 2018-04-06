@@ -7,6 +7,7 @@ import { SessionsComponent } from "./sessions/sessions.component";
 import { AboutComponent } from "./about/about.component";
 import { DigilabListComponent } from "./digilab/digilab-list/digilab-list.component";
 import { DigilabEditComponent } from "./digilab/digilab-edit/digilab-edit.component";
+import { SessionEditComponent } from "./sessions/session-edit/session-edit.component";
 
 const appRoutes : Routes =  [
     { path : ''  , redirectTo : "/about" ,  pathMatch : 'full' ,},
@@ -14,8 +15,11 @@ const appRoutes : Routes =  [
         { path : '' , component : DigilabListComponent } ,
         { path : 'new' , component : DigilabEditComponent } ,
     ]  },
-    { path : 'sessions' , component : SessionsComponent },
-    { path : 'about' , component : AboutComponent }
+    { path : 'sessions' , component : SessionsComponent ,children : [
+        { path : '' , component : SessionsComponent } ,
+        { path : 'new' , component : SessionEditComponent } ,
+    ]  }  ,
+    { path : 'about' , component : AboutComponent   }
 ];
 
 @NgModule({

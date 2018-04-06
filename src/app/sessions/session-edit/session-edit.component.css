@@ -1,0 +1,20 @@
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 40%;
+}
+
+.left-label{
+    float : left; 
+    font-size : 17px; 
+    height : 40px ;  
+    display: flex; 
+    align-items: center;
+}
+
+.container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}

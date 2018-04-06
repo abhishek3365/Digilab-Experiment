@@ -3,22 +3,18 @@
     
   
     <mat-sidenav-container class="example-sidenav-container"
-                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
                            style="background-color : #EEEEEE;"
                            role="navigation">
       
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches" 
-                   fixedTopGap="56"
                    [style.width.%] = " mobileQuery.matches ? 50 : 20  "
-                   class="mat-elevation-z8">
+                   class="mat-elevation-z8  ">
         <app-sidebar-menu></app-sidebar-menu>
       </mat-sidenav>
       
-      
-
       <mat-sidenav-content role="main">
-          <mat-toolbar color="primary" class="example-toolbar mat-elevation-z6">
+          <mat-toolbar color="primary" class="mat-elevation-z6" style="z-index : 10;">
               <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
               <h1 class="example-app-name">Responsive App</h1>
             </mat-toolbar>
