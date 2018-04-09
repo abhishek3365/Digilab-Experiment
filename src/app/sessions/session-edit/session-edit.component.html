@@ -54,7 +54,7 @@
                     [matChipInputAddOnBlur]="addOnBlur"
                     (matChipInputTokenEnd)="onAddTopic($event)"
                     [matAutocomplete]="auto" />
-            <mat-autocomplete #auto="matAutocomplete">
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="topicSelected($event)">
               <mat-option *ngFor="let option of options" [value]="option">
                   {{ option.name }}
               </mat-option>
@@ -62,7 +62,35 @@
           </mat-chip-list>
         </mat-form-field>
 
-        <button mat-raised-button style="margin-top : 20px; width : 80%;" color="primary">Register</button>
+        <div class="col-xs-12">
+          <span class="left-label" >Guests</span>
+          <button 
+            mat-icon-button 
+            style="float : right;"
+            type="button"
+            (click) = "onAddGuest()"  ><mat-icon>add</mat-icon></button>
+        </div>
+
+        <div *ngFor="let guest of guests; let i = index">
+          <div class="col-md-6">
+            <mat-card>
+              <mat-card-title>{{guest.name}}</mat-card-title>
+              <mat-card-content>
+                {{guest.email}}<br>
+                {{guest.contact}}<br>
+                {{guest.compant}}
+              </mat-card-content>
+              <button 
+                mat-icon-button 
+                style="float : right;"
+                type="button"
+                (click) = "onDeleteGuest(i)"><mat-icon>delete</mat-icon></button>
+            </mat-card>
+          </div>
+        </div>
+
+        <button mat-raised-button style="margin-top : 20px; width : 80%;" color="primary">Save As Draft</button>
+        <button mat-raised-button style="margin-top : 20px; width : 80%;" color="primary">Submit for Validation</button>
 
       </form>
     </mat-card>

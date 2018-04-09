@@ -3,7 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DigilabComponent } from '../../digilab/digilab.component';
 import { ENTER } from '@angular/cdk/keycodes';
 import { COMMA } from '@angular/cdk/keycodes';
-import { MatChipInputEvent } from '@angular/material';
+import { MatChipInputEvent, MatAutocompleteSelectedEvent, MatDialog } from '@angular/material';
+import { GuestDialogComponent } from './guest-dialog/guest-dialog.component';
 
 @Component({
   selector: 'app-session-edit',
@@ -25,8 +26,9 @@ export class SessionEditComponent implements OnInit {
 
   diglabs;
   options;
+  guests;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -37,8 +39,9 @@ export class SessionEditComponent implements OnInit {
   initForm() {
 
     this.diglabs = [{ id : 1 , name : 'Digilab 1' } , { id : 2 , name : 'Digilab 2' }]
-    this.options = [{ name : 'testTopic3' },{ name : 'testTopic4' }];
+    this.options = [{ id : 1 , name : 'testTopic3' },{ id : 2 , name : 'testTopic4' }];
     this.topics = [{ name : 'testTopic1' },{ name : 'testTopic2' }];
+    this.guests = [{name: 'Test Guest' , email : 'Testemail@test.com' , contact:'1243241' , company:'testCompany'}];
 
     this.sessionForm = new FormGroup( {
       'Name' : new FormControl( null , [Validators.required] ) ,
@@ -67,8 +70,31 @@ export class SessionEditComponent implements OnInit {
   onRemoveTopic(topic: any): void {
     let index = this.topics.indexOf(topic);
     if (index >= 0) {
+      if( topic.id )
+        this.options.push(topic);
       this.topics.splice(index, 1);
     }
+  }
+
+  topicSelected( event: MatAutocompleteSelectedEvent ){
+    // console.log(event);
+    this.topics.push(event.option.value);
+    console.log(this.options.indexOf(event.option.value));
+    this.options.splice(0,1);
+  }
+
+  onAddGuest(){
+    let dialogRef = this.dialog.open(GuestDialogComponent, {
+      width: '250px'
+    });
+
+    dialogRef.afterClosed().subscribe(guest => {
+      this.guests.push(guest);
+    });
+  }
+
+  onDeleteGuest(i){
+    this.guests.splice(i,1);
   }
 
 }

@@ -18,6 +18,8 @@ import { DigilabItemComponent } from './digilab/digilab-item/digilab-item.compon
 import { DigilabListComponent } from './digilab/digilab-list/digilab-list.component';
 import { DigilabEditComponent } from './digilab/digilab-edit/digilab-edit.component';
 import { SessionEditComponent } from './sessions/session-edit/session-edit.component';
+import { GuestDialogComponent } from './sessions/session-edit/guest-dialog/guest-dialog.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,11 @@ import { SessionEditComponent } from './sessions/session-edit/session-edit.compo
     DigilabItemComponent,
     DigilabListComponent,
     DigilabEditComponent,
-    SessionEditComponent
+    SessionEditComponent,
+    GuestDialogComponent
+  ],
+  entryComponents :[
+    GuestDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,8 @@ import { SessionEditComponent } from './sessions/session-edit/session-edit.compo
     NoopAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AmazingTimePickerModule
+    AmazingTimePickerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
