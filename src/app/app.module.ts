@@ -20,6 +20,7 @@ import { DigilabEditComponent } from './digilab/digilab-edit/digilab-edit.compon
 import { SessionEditComponent } from './sessions/session-edit/session-edit.component';
 import { GuestDialogComponent } from './sessions/session-edit/guest-dialog/guest-dialog.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
+import { backnavService } from './backnav.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
     AmazingTimePickerModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [ backnavService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

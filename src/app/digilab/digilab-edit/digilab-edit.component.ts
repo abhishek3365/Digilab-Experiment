@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import {ENTER, COMMA} from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material';
+import { backnavService } from '../../backnav.service';
 
 @Component({
   selector: 'app-digilab-edit',
   templateUrl: './digilab-edit.component.html',
   styleUrls: ['./digilab-edit.component.css']
 })
-export class DigilabEditComponent implements OnInit {
+export class DigilabEditComponent implements OnInit , OnDestroy {
 
   topics;
 
@@ -21,10 +22,15 @@ export class DigilabEditComponent implements OnInit {
 
   digilabForm : FormGroup; 
   
-  constructor() { }
+  constructor( private backnavService : backnavService ) { }
 
   ngOnInit() {
     this.initForm();
+    this.backnavService.setBackOption();
+  }
+
+  ngOnDestroy(){
+    this.backnavService.removeBackOption();
   }
 
   initForm(){
@@ -89,5 +95,7 @@ export class DigilabEditComponent implements OnInit {
   onRemoveHost( index : number ){
     (<FormArray>this.digilabForm.get('hosts')).removeAt(index);
   } 
+
+  
 
 }
