@@ -7,4 +7,15 @@
     opacity: 1;
 }
 
+mat-card{
+    padding: 0;
+  }
+  
+  .boxed {
+    background-color: blue;
+    height: 100%;
+    width: 5px;
+    position: absolute; 
+  }
+  
   
