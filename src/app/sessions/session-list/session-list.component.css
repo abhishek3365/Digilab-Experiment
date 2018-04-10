@@ -1,0 +1,39 @@
+.mat-ink-bar{
+    color: black !important;
+    background-color:black !important;
+}
+
+.mat-tab-label{
+    opacity: 1;
+}
+
+.mat-card{
+    padding: 0px !important;
+    margin : 5px;
+    padding-top: 10px !important;
+    padding-bottom : 10px !important;
+}
+  
+
+
+.wrapper {
+    display: table;
+    height: auto;
+    width: 100%;
+}
+.wrapper2 {
+    height: 100%;
+    display: table-row;
+}
+.inner {
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.text{
+    margin : 0px;
+    font-weight: 700;
+}
+  
+  

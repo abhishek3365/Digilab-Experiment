@@ -8,6 +8,7 @@ import { AboutComponent } from "./about/about.component";
 import { DigilabListComponent } from "./digilab/digilab-list/digilab-list.component";
 import { DigilabEditComponent } from "./digilab/digilab-edit/digilab-edit.component";
 import { SessionEditComponent } from "./sessions/session-edit/session-edit.component";
+import { SessionListComponent } from "./sessions/session-list/session-list.component";
 
 const appRoutes : Routes =  [
     { path : ''  , redirectTo : "/about" ,  pathMatch : 'full' ,},
@@ -16,7 +17,7 @@ const appRoutes : Routes =  [
         { path : 'new' , component : DigilabEditComponent } ,
     ]  },
     { path : 'sessions' , component : SessionsComponent ,children : [
-        { path : '' , component : SessionsComponent } ,
+        { path : '' , component : SessionListComponent } ,
         { path : 'new' , component : SessionEditComponent } ,
     ]  }  ,
     { path : 'about' , component : AboutComponent   }

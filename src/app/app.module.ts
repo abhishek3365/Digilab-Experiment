@@ -21,6 +21,8 @@ import { SessionEditComponent } from './sessions/session-edit/session-edit.compo
 import { GuestDialogComponent } from './sessions/session-edit/guest-dialog/guest-dialog.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 import { backnavService } from './backnav.service';
+import { SessionListComponent } from './sessions/session-list/session-list.component';
+import { SessionItemComponent } from './sessions/session-item/session-item.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { backnavService } from './backnav.service';
     DigilabListComponent,
     DigilabEditComponent,
     SessionEditComponent,
-    GuestDialogComponent
+    GuestDialogComponent,
+    SessionListComponent,
+    SessionItemComponent
   ],
   entryComponents :[
     GuestDialogComponent
