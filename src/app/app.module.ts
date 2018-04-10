@@ -23,6 +23,7 @@ import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 import { backnavService } from './backnav.service';
 import { SessionListComponent } from './sessions/session-list/session-list.component';
 import { SessionItemComponent } from './sessions/session-item/session-item.component';
+import { SessionDetailComponent } from './sessions/session-detail/session-detail.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SessionItemComponent } from './sessions/session-item/session-item.compo
     SessionEditComponent,
     GuestDialogComponent,
     SessionListComponent,
-    SessionItemComponent
+    SessionItemComponent,
+    SessionDetailComponent
   ],
   entryComponents :[
     GuestDialogComponent

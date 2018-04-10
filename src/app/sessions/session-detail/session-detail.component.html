@@ -1,0 +1,72 @@
+<div class="container" style="text-align:center;">
+  <div class="col-md-2"></div>
+  <div style="margin : auto" class = "col-md-8">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="session-title">Session Title</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content style="padding : 10px ; margin-top : 20px">
+        <table style="text-align : left; width : 100%;">
+          <tr >
+            <td class="description-heading col-xs-2 nopadding" >Initiator Id</td>
+            <td class="description-heading basic-padding col-xs-1" >:</td>
+            <td class="col-xs-9 nopadding">testIntiator@soprasteria.com</td>
+          </tr>
+          <tr>
+            <td class="description-heading">Digilab</td>
+            <td class="description-heading basic-padding">:</td>
+            <td>Digilab France</td>
+          </tr>
+          <tr>
+            <td class="description-heading">Duration</td>
+            <td class="description-heading basic-padding">:</td>
+            <td>10 min</td>
+          </tr>
+          <tr>
+            <td class="description-heading">Date</td>
+            <td class="description-heading basic-padding">:</td>
+            <td>23rd August, 2017</td>
+          </tr>
+          <tr>
+            <td class="description-heading">Topics</td>
+            <td class="description-heading basic-padding">:</td>
+            <td>
+              <mat-chip-list>
+                <mat-chip *ngFor="let topic of topics" 
+                  [selected]="'true'"
+                  style="margin : 1px;">
+                  {{topic.name}}
+                </mat-chip>
+              </mat-chip-list>
+            </td>
+          </tr>
+          <tr>
+            <td class="description-heading">Description</td>
+            <td class="description-heading basic-padding">:</td>
+            <td style="padding : 5px 0px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione, temporibus beatae. Provident repudiandae quis natus dignissimos. Deleniti fugiat, dicta, impedit voluptatum ullam labore culpa iure repellendus, et voluptate quam error?</td>
+          </tr>
+          <tr>
+            <td class="description-heading">Guests</td>
+            <td class="description-heading basic-padding">:</td>
+            <td style="margin : px 0px;">
+              <ol style="padding : 5px 20px">
+                <li *ngFor="let guest of guests">
+                  {{guest.name}}
+                </li>
+              </ol>
+            </td>
+          </tr>
+          
+        </table>
+
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <button mat-button><mat-icon>done</mat-icon>ACCEPT</button>
+        <button mat-button><mat-icon>clear</mat-icon>DECLINE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-md-2"></div>
+</div>

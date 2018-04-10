@@ -72,8 +72,8 @@
         </div>
 
         <div *ngFor="let guest of guests; let i = index">
-          <div class="col-md-6">
-            <mat-card>
+          <div class="col-md-4 col-sm-4">
+            <mat-card style="padding :5px;">
               <mat-card-title>{{guest.name}}</mat-card-title>
               <mat-card-content>
                 {{guest.email}}<br>
@@ -82,7 +82,6 @@
               </mat-card-content>
               <button 
                 mat-icon-button 
-                style="float : right;"
                 type="button"
                 (click) = "onDeleteGuest(i)"><mat-icon>delete</mat-icon></button>
             </mat-card>

@@ -18,3 +18,25 @@
     margin-top: 5%;
     margin-bottom: 5%;
 }
+
+.wrapper {
+    display: table;
+    height: auto;
+    width: 100%;
+    text-align: left;
+}
+.wrapper2 {
+    height: 100%;
+    display: table-row;
+}
+
+.inner {
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.circle{
+    border-radius: 50%;
+    background-color: grey;
+}
