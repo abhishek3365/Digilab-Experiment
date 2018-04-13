@@ -1,10 +1,12 @@
 .mat-ink-bar{
-    color: black !important;
-    background-color:black !important;
+    color: white !important;
+    background-color:white !important;
+    padding: 0 5px; 
 }
 
-.mat-tab-label{
+.mat-tab-labels{
     opacity: 1;
+    background-color: rgb(198, 40, 40);
 }
 
 .mat-card{
@@ -13,8 +15,13 @@
     padding-top: 10px !important;
     padding-bottom : 10px !important;
 }
-  
 
+.mat-tab-label-content{
+    color: white;
+    font-weight: 700; 
+    text-transform: uppercase;
+    opacity: 1;
+}
 
 .wrapper {
     display: table;
